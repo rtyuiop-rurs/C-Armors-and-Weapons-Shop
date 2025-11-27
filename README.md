@@ -75,8 +75,3 @@ The amount of gold left is: 110
 - Inventory only shows items with quantity > 0
 - Program handles invalid inputs gracefully
 
-## Future Enhancements
-- Multiple shop types using template functions
-- Enhanced inventory management
-- Item selling functionality
-- Persistent save/load system

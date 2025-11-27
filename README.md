@@ -1,116 +1,94 @@
-# C-Armors-and-Weapons-Shop
-This is a simple c++ console program that simulates a armors and weapons shop where user can buy either weapons and armor with a randomly generated gold value, And they can view their inventory. 
-
 🛒 Weapons & Armor Shop (C++)
 
 This is a small C++ console program where the player can buy weapons and armor from a shop.
 The player starts with some random gold and can choose which items to buy as long as they have enough money.
 
-This project is good practice for beginners who want to learn:
 
-enums
+Features
+Random Gold Allocation: Each customer starts with 100-200 gold
 
-arrays
+Armor Shop: Purchase from 5 different armor types (Copper, Iron, Gold, Diamond, Netherite)
 
-classes
+Weapon Shop: Purchase various weapons (implementation details in code)
 
-basic input handling
+Inventory Management: Track purchased items and remaining gold
 
-simple game loops
+Input Validation: Robust error handling for user inputs
 
-⭐ What the Program Does
+Program Structure
+Core Components
+Armor System
+cpp
+namespace Armor {
+    enum armor { copper, iron, gold, diamond, netherite, armor_count };
+    // Associated costs and string representations
+}
+Customer Class
+Attributes: Name, gold balance, shopping cart
 
-The player types their name.
+Methods: Purchase items, check inventory, get gold balance
 
-The game gives the player a random amount of gold.
+Shop Interfaces
+armorShop(): Armor purchasing interface
 
-The player can visit:
+weaponShop(): Weapon purchasing interface
 
-The Armor Shop
+buyArmor()/: Individual item purchase logic
 
-The Weapon Shop
+How to Use
+Compilation: Ensure you have the "Random.h" header file
 
-Each shop shows a list of items with their prices.
+Run the program
 
-The player chooses what to buy by entering a number.
+Enter your name when prompted
 
-If the player has enough gold, the item is added to their inventory.
+View available items and their costs
 
-The player can quit the shops anytime.
+Purchase items by entering the corresponding number
 
-When they exit, the game shows a final inventory summary.
+Type 'q' to exit the shop
 
-🛡 Armor in the Game
+View final inventory and remaining gold
 
-Examples (depends on your code):
+Controls
+Number keys (0-4): Select corresponding armor/weapon
 
-Copper armor
+'q' key: Quit the current shop
 
-Iron armor
+Invalid inputs: Automatically handled with error messages
 
-Gold armor
+Item Costs
+Copper Armor: 30 gold
 
-Diamond armor
+Iron Armor: 40 gold
 
-Netherite armor
+Gold Armor: 50 gold
 
-Each armor has a fixed cost.
+Diamond Armor: 66 gold
 
-⚔ Weapons in the Game
+Netherite Armor: 78 gold
 
-Examples:
+Weapon costs: Defined in Weapon namespace
 
-Sword
 
-Shield
+Example Output
+text
+Enter your name: Alice
+Hello Alice You have 150 amount of gold
+Here is the armor sets for today: 
+0) copper armor costs: 30
+1) iron armor costs: 40
+...
+You bought iron armor and you have: 110 left
+Inventory:
+Armor bought: iron set x1
+The amount of gold left is: 110
 
-Halberds
+Notes
+Gold is randomly allocated between 100-200 at customer creation
 
-Hammer
+Players cannot purchase items they cannot afford
 
-Greatsword
+Inventory only shows items with quantity > 0
 
-Each weapon also has a fixed cost.
-
-👤 Player Features
-
-Starts with random gold
-
-Can buy items
-
-Cannot buy things they can't afford
-
-Keeps track of how many items are bought
-
-Inventory is shown at the end
-
-🧰 How the Code Works (Simple Explanation)
-
-Enums are used for item types (like armor names and weapon names).
-
-std::array stores item names and their costs.
-
-A class (Customer) stores:
-
-gold
-
-armor inventory
-
-weapon inventory
-
-Input is checked so the program doesn't break when the user types something wrong.
-
-Functions handle:
-
-buying items
-
-showing shops
-
-printing the final inventory
-
-▶ How To Run the Program
-
-If you're using g++:
-
-g++ -std=c++20 -o shop shop.cpp
-./shop
+Program handles invalid inputs gracefully
